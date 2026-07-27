@@ -13,6 +13,7 @@
             --card-bg: rgba(255, 255, 255, 0.03);
             --card-border: rgba(255, 255, 255, 0.08);
             --purple-accent: #a855f7;
+            --yellow-snap: #fffc00;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
         }
@@ -161,6 +162,51 @@
             margin: 0 auto 32px;
         }
 
+        /* Dual Action Buttons */
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn-purple {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .btn-snap {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fffc00;
+            color: #000;
+            padding: 12px 26px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 20px rgba(255, 252, 0, 0.25);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .btn-purple:hover, .btn-snap:hover {
+            opacity: 0.92;
+            transform: translateY(-2px);
+        }
+
         .section-title {
             font-size: 1.8rem;
             font-weight: 800;
@@ -231,7 +277,7 @@
         }
 
         .featured-content {
-            max-width: 450px;
+            max-width: 500px;
         }
 
         .featured-content h3 {
@@ -243,26 +289,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 24px;
-        }
-
-        .btn-purple {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #a855f7, #7c3aed);
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .btn-purple:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
         }
 
         .contact-section {
@@ -278,8 +304,8 @@
         }
 
         .social-btn {
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
@@ -288,13 +314,25 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: all 0.3s ease;
         }
 
-        .social-btn:hover {
+        .social-btn.insta:hover {
             border-color: var(--purple-accent);
             color: var(--purple-accent);
+            transform: translateY(-3px);
+        }
+
+        .social-btn.snap:hover {
+            border-color: var(--yellow-snap);
+            color: var(--yellow-snap);
+            transform: translateY(-3px);
+        }
+
+        .social-btn.git:hover {
+            border-color: #fff;
+            color: #fff;
             transform: translateY(-3px);
         }
 
@@ -310,6 +348,8 @@
             .hero h1 { font-size: 2.3rem; }
             .featured-box { flex-direction: column; padding: 24px; text-align: center; }
             .nav-links { display: none; }
+            .cta-group { flex-direction: column; width: 100%; }
+            .btn-purple, .btn-snap { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -333,10 +373,17 @@
             </div>
             <p class="greeting">Hello! I'm Taufique Ehsan 👋</p>
             <h1>Digital Content Creator & <br><span class="purple">Visual Strategist.</span></h1>
-            <p class="tagline">I focus on creating high-quality visual experiences, modern dark aesthetics, and digital media strategies.</p>
-            <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="btn-purple">
-                <i class="fab fa-instagram"></i> Connect on Instagram
-            </a>
+            <p class="tagline">Creating high-quality visual experiences, modern dark aesthetics, and digital media content.</p>
+            
+            <!-- Both Instagram & Snapchat Buttons -->
+            <div class="cta-group">
+                <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="btn-purple">
+                    <i class="fab fa-instagram"></i> Instagram (@taufique62_)
+                </a>
+                <a href="https://www.snapchat.com/add/taufique_66?share_id=BVY8vdXYr58&locale=en-GB" target="_blank" class="btn-snap">
+                    <i class="fab fa-snapchat"></i> Snapchat (@taufique_66)
+                </a>
+            </div>
         </section>
 
         <section id="work">
@@ -372,19 +419,25 @@
                     <p style="color: var(--purple-accent); font-weight: 600; margin-bottom: 8px;">Featured Showcase</p>
                     <h3>Modern Dark Portfolio</h3>
                     <p>A minimalist, high-performance portfolio website built with glassmorphism, responsive UI, and custom ambient purple backdrops.</p>
-                    <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="btn-purple">
-                        View Instagram Profile
-                    </a>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px;">
+                        <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="btn-purple">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://www.snapchat.com/add/taufique_66?share_id=BVY8vdXYr58&locale=en-GB" target="_blank" class="btn-snap">
+                            <i class="fab fa-snapchat"></i> Snapchat
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <section class="contact-section" id="contact">
             <h2 class="section-title">Let's Connect</h2>
-            <p style="color: var(--text-muted);">Have a question or want to collaborate? Drop me a message!</p>
+            <p style="color: var(--text-muted);">Have a question or want to collaborate? Find me on social platforms!</p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/ehsantaufique57-debug" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="social-btn insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.snapchat.com/add/taufique_66?share_id=BVY8vdXYr58&locale=en-GB" target="_blank" class="social-btn snap" title="Snapchat"><i class="fab fa-snapchat"></i></a>
+                <a href="https://github.com/ehsantaufique57-debug" target="_blank" class="social-btn git" title="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </section>
     </div>
