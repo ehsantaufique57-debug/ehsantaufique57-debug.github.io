@@ -50,7 +50,7 @@
 
         .glow-middle {
             position: absolute;
-            top: 40%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 750px;
@@ -61,7 +61,7 @@
             pointer-events: none;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar with 3 Clean Tabs */
         nav {
             position: fixed;
             top: 0;
@@ -71,7 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(7, 3, 13, 0.75);
+            background: rgba(7, 3, 13, 0.85);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--card-border);
             z-index: 1000;
@@ -88,7 +88,7 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             list-style: none;
         }
 
@@ -96,11 +96,11 @@
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a:hover { color: var(--purple-light); }
 
         .wrapper {
             max-width: 950px;
@@ -110,7 +110,7 @@
 
         /* Hero Section */
         .hero {
-            padding-top: 160px;
+            padding-top: 170px;
             padding-bottom: 70px;
             text-align: center;
             animation: fadeIn 1s ease-in-out;
@@ -222,7 +222,7 @@
             box-shadow: 0 15px 30px rgba(168, 85, 247, 0.45);
         }
 
-        /* Tech Skill Pills / Badges */
+        /* Skill Badges */
         .skills-pills {
             display: flex;
             justify-content: center;
@@ -249,19 +249,19 @@
             letter-spacing: -0.5px;
         }
 
-        /* 2x2 Grid Cards */
-        .grid-2x2 {
+        /* Services Grid (5 Cards) */
+        .grid-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
-            margin-bottom: 90px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 22px;
-            padding: 30px;
+            padding: 28px;
             backdrop-filter: blur(20px);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -306,18 +306,62 @@
         }
 
         .card h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             line-height: 1.6;
         }
 
-        /* Featured Box */
+        /* Workspace Image Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .gallery-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Featured Showcase Box */
         .featured-box {
             position: relative;
             background: var(--card-bg);
@@ -423,16 +467,18 @@
 
     <div class="glow-top"></div>
 
+    <!-- 3 Clean Navigation Tabs -->
     <nav>
         <div class="logo">Taufique Ehsan</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="#portfolio">Portfolio & Setup</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <div class="wrapper">
+        <!-- About Section -->
         <section class="hero" id="about">
             <div class="avatar-wrapper">
                 <img src="profile.jpg" alt="Taufique Ehsan" class="avatar-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/135/07030d/a855f7?text=TE';">
@@ -444,6 +490,7 @@
             <!-- Skill Badges -->
             <div class="skills-pills">
                 <span class="pill">⚡ Freelancer</span>
+                <span class="pill">🎬 Video Editor</span>
                 <span class="pill">🚀 Digital Marketing</span>
                 <span class="pill">💻 Web Developer</span>
                 <span class="pill">🛒 E-Commerce</span>
@@ -459,9 +506,15 @@
             </div>
         </section>
 
-        <section id="work">
+        <!-- Services & What I Do -->
+        <section id="portfolio">
             <h2 class="section-title">What I Do</h2>
-            <div class="grid-2x2">
+            <div class="grid-cards">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-video"></i></div>
+                    <h3>Video Editor</h3>
+                    <p>Crafting engaging, cinematic video content, social media reels, and high-impact visual edits with seamless transitions.</p>
+                </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-briefcase"></i></div>
                     <h3>Freelancer</h3>
@@ -481,6 +534,25 @@
                     <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
                     <h3>E-Commerce</h3>
                     <p>Setting up scalable online stores, product showcases, and seamless digital buying experiences for businesses.</p>
+                </div>
+            </div>
+
+            <!-- Workspace Setup Gallery (Both Photos) -->
+            <h2 class="section-title">My Creative Workspace</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <img src="setup1.jpg" alt="Editing Setup" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400/120826/a855f7?text=Dual+Monitor+Setup';">
+                    <div class="gallery-info">
+                        <h4>Dual-Monitor Editing Suite</h4>
+                        <p>High-performance editing setup designed for seamless video rendering and graphic design.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <img src="setup2.jpg" alt="Digital Analytics Setup" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x400/120826/a855f7?text=Analytics+Workspace';">
+                    <div class="gallery-info">
+                        <h4>Marketing & Development Hub</h4>
+                        <p>Optimized workspace for tracking digital marketing campaigns and live coding projects.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -504,6 +576,7 @@
             </div>
         </div>
 
+        <!-- Contact Section -->
         <section class="contact-section" id="contact">
             <h2 class="section-title">Let's Connect</h2>
             <p style="color: var(--text-muted);">Have a question or want to collaborate? Find me on social platforms!</p>
