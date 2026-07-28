@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taufique Ehsan | Portfolio</title>
+    <title>Taufique Ehsan | Personal Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #090514;
-            --card-bg: #120b24;
-            --accent-purple: #8b5cf6;
-            --accent-pink: #d946ef;
-            --accent-blue: #3b82f6;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-glow: rgba(139, 92, 246, 0.4);
+            --bg-color: #07040d;
+            --card-bg: #0f091d;
+            --purple-glow: #7928ca;
+            --pink-glow: #ff0080;
+            --blue-glow: #0070f3;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
         }
 
         * {
@@ -32,43 +31,49 @@
             color: var(--text-main);
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 45%),
-                radial-gradient(circle at 85% 80%, rgba(217, 70, 239, 0.18) 0%, transparent 45%);
+                radial-gradient(circle at 10% 20%, rgba(121, 40, 202, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 128, 0.2) 0%, transparent 40%);
             background-attachment: fixed;
+            min-height: 100vh;
         }
 
+        /* Top Navbar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 25px 6%;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-            backdrop-filter: blur(16px);
-            background: rgba(9, 5, 20, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            background: rgba(7, 4, 13, 0.6);
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--pink-glow);
         }
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: 0.3s;
         }
 
@@ -76,77 +81,152 @@
             color: #fff;
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
+        .btn-subscribe {
+            padding: 10px 24px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--purple-glow), var(--pink-glow));
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-subscribe:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.7);
+        }
+
+        /* Left Fixed Vertical Social Bar */
+        .left-social-bar {
+            position: fixed;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 140px 5% 60px;
+            gap: 20px;
+            z-index: 90;
         }
 
-        .profile-wrapper {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(139, 92, 246, 0.9);
-            box-shadow: 0 0 35px rgba(139, 92, 246, 0.6), 0 0 20px rgba(217, 70, 239, 0.5);
-        }
-
-        /* Front Name Glow Effect */
-        .glowing-name {
-            font-size: 3rem;
-            font-weight: 800;
+        .social-text {
+            writing-mode: vertical-rl;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #a855f7 50%, #d946ef 100%);
+        }
+
+        .line {
+            width: 2px;
+            height: 40px;
+            background: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        .left-social-bar a {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .left-social-bar a:hover {
+            color: var(--pink-glow);
+            transform: scale(1.2);
+        }
+
+        /* Main Landing Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 8% 60px 100px;
+            gap: 40px;
+        }
+
+        .hero-text {
+            max-width: 580px;
+        }
+
+        .glowing-title {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .glowing-name-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #a855f7, #ff0080);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.6));
-            letter-spacing: -1px;
+            filter: drop-shadow(0 0 15px rgba(255, 0, 128, 0.4));
         }
 
-        .hero h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .hero-desc {
             color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
-        .hero-sub {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 650px;
+            font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 30px;
         }
 
-        /* Social Media Buttons */
-        .social-btns {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
+        /* Profile Frame like 3D Cyberpunk Card */
+        .hero-img-container {
+            position: relative;
         }
 
-        .social-btn {
-            padding: 12px 26px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
+        .neon-card {
+            width: 350px;
+            height: 420px;
+            border-radius: 35px;
+            background: var(--card-bg);
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .neon-card::before {
+            content: '';
+            position: absolute;
+            top: -3px; left: -3px; right: -3px; bottom: -3px;
+            background: linear-gradient(135deg, var(--pink-glow), var(--purple-glow), var(--blue-glow));
+            border-radius: 38px;
+            z-index: -1;
+            box-shadow: 0 0 40px rgba(255, 0, 128, 0.5);
+        }
+
+        .neon-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        /* Buttons Section */
+        .action-btns {
             display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .glow-btn {
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: 0.3s ease;
+            transition: 0.3s;
             color: white;
         }
 
@@ -161,16 +241,12 @@
             box-shadow: 0 0 20px rgba(255, 252, 0, 0.4);
         }
 
-        .social-btn:hover {
-            transform: translateY(-4px) scale(1.04);
+        .glow-btn:hover {
+            transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
         }
 
-        /* Big Square Skill Cards Grid */
-        .skills-section {
-            padding: 40px 8% 80px;
-        }
-
+        /* Big Square Skill Cards Section */
         .section-title {
             text-align: center;
             font-size: 2.2rem;
@@ -178,15 +254,19 @@
             margin-bottom: 40px;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+        .gradient-span {
+            background: linear-gradient(135deg, var(--purple-glow), var(--pink-glow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .skills-section {
+            padding: 60px 8% 80px 100px;
+        }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 25px;
             max-width: 1100px;
             margin: 0 auto;
@@ -194,47 +274,46 @@
 
         .skill-card {
             background: var(--card-bg);
-            border-radius: 24px;
-            padding: 35px 20px;
+            border-radius: 28px;
+            padding: 30px 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: 0.3s ease;
+            transition: 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             aspect-ratio: 1 / 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .skill-card i {
             font-size: 2.5rem;
-            margin-bottom: 18px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--purple-glow), var(--pink-glow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .skill-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            color: var(--text-main);
         }
 
         .skill-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-purple);
-            box-shadow: 0 10px 30px var(--border-glow);
-            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--pink-glow);
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
         }
 
-        /* Portfolio Setup Showcase */
+        /* Workspace Setup Showcase */
         .setup-section {
-            padding: 40px 8% 80px;
+            padding: 40px 8% 80px 100px;
         }
 
         .setup-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             max-width: 1100px;
             margin: 0 auto;
@@ -242,7 +321,7 @@
 
         .setup-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: 0.3s;
@@ -250,8 +329,8 @@
 
         .setup-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-purple);
-            box-shadow: 0 10px 30px var(--border-glow);
+            border-color: var(--purple-glow);
+            box-shadow: 0 0 30px rgba(121, 40, 202, 0.4);
         }
 
         .setup-card img {
@@ -265,13 +344,13 @@
         }
 
         .setup-info h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             margin-bottom: 8px;
         }
 
         .setup-info p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
@@ -283,56 +362,82 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            .glowing-name {
-                font-size: 2.2rem;
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 120px 5% 40px;
             }
-            .hero h2 {
-                font-size: 1.4rem;
-            }
-            .nav-links {
+            .left-social-bar {
                 display: none;
+            }
+            .skills-section, .setup-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            .action-btns {
+                justify-content: center;
+            }
+            .neon-card {
+                width: 280px;
+                height: 350px;
+            }
+            .glowing-title {
+                font-size: 2.8rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top Navigation Bar -->
     <header>
-        <div class="logo">Taufique Ehsan</div>
+        <div class="logo"><i class="fa-solid fa-play"></i> Taufique</div>
         <ul class="nav-links">
-            <li><a href="#home">About</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#skills">Services</a></li>
             <li><a href="#setup">Workspace</a></li>
         </ul>
+        <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="btn-subscribe">Follow Me</a>
     </header>
 
-    <!-- Main Hero Section -->
+    <!-- Left Social Sidebar -->
+    <div class="left-social-bar">
+        <span class="social-text">Follow Me</span>
+        <div class="line"></div>
+        <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.snapchat.com/add/taufique_66?share_id=x9pRKDmtkv8&locale=en-GB" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+    </div>
+
+    <!-- Main Hero Landing -->
     <section class="hero" id="home">
-        <div class="profile-wrapper">
-            <img src="profile.jpg" alt="Taufique Ehsan" class="profile-img" onerror="this.src='https://via.placeholder.com/140/120b24/ffffff?text=profile.jpg'">
+        <div class="hero-text">
+            <h1 class="glowing-title">My Personal <br>Portfolio</h1>
+            <div class="glowing-name-text">Taufique Ehsan</div>
+            <p class="hero-desc">Digital Content Creator & Visual Strategist. Creating high-quality visual experiences, modern dark aesthetics, and digital media content that exceeds expectations.</p>
+
+            <!-- Instagram & Snapchat Glowing Buttons -->
+            <div class="action-btns">
+                <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="glow-btn btn-insta">
+                    <i class="fa-brands fa-instagram"></i> Instagram (@taufique62_)
+                </a>
+                <a href="https://www.snapchat.com/add/taufique_66?share_id=x9pRKDmtkv8&locale=en-GB" target="_blank" class="glow-btn btn-snap">
+                    <i class="fa-brands fa-snapchat"></i> Snapchat (@taufique_66)
+                </a>
+            </div>
         </div>
 
-        <!-- FRONT GLOWING NAME -->
-        <h1 class="glowing-name">Taufique Ehsan</h1>
-        <h2>Digital Content Creator & Visual Strategist</h2>
-
-        <p class="hero-sub">Creating high-quality visual experiences, modern dark aesthetics, and digital media content.</p>
-
-        <!-- INSTAGRAM & SNAPCHAT PROFILES WITH DIRECT LINKS -->
-        <div class="social-btns">
-            <a href="https://www.instagram.com/taufique62_?igsh=MTYxc2Vrc2pma2poZQ==" target="_blank" class="social-btn btn-insta">
-                <i class="fa-brands fa-instagram"></i> Instagram (@taufique62_)
-            </a>
-            <a href="https://www.snapchat.com/add/taufique_66?share_id=x9pRKDmtkv8&locale=en-GB" target="_blank" class="social-btn btn-snap">
-                <i class="fa-brands fa-snapchat"></i> Snapchat (@taufique_66)
-            </a>
+        <!-- Right Side 3D Glowing Card Photo -->
+        <div class="hero-img-container">
+            <div class="neon-card">
+                <img src="profile.jpg" alt="Taufique Ehsan" onerror="this.src='https://via.placeholder.com/350x420/0f091d/ffffff?text=profile.jpg'">
+            </div>
         </div>
     </section>
 
-    <!-- BIG SQUARE SKILL CARDS -->
+    <!-- Big Square Skills Grid -->
     <section class="skills-section" id="skills">
-        <h2 class="section-title">What I <span class="gradient-text">Do</span></h2>
+        <h2 class="section-title">What I <span class="gradient-span">Do</span></h2>
 
         <div class="skills-grid">
             <div class="skill-card">
@@ -358,13 +463,13 @@
         </div>
     </section>
 
-    <!-- SETUP SHOWCASE -->
+    <!-- Setup Showcase Section -->
     <section class="setup-section" id="setup">
-        <h2 class="section-title">Workspace <span class="gradient-text">& Setup</span></h2>
+        <h2 class="section-title">Workspace <span class="gradient-span">& Setup</span></h2>
         
         <div class="setup-grid">
             <div class="setup-card">
-                <img src="Setup1.jpg" alt="Primary Workspace" onerror="this.src='https://via.placeholder.com/400x240/120b24/ffffff?text=Setup1.jpg'">
+                <img src="Setup1.jpg" alt="Primary Workspace" onerror="this.src='https://via.placeholder.com/400x240/0f091d/ffffff?text=Setup1.jpg'">
                 <div class="setup-info">
                     <h3>Primary Workspace</h3>
                     <p>High-efficiency development and editing workstation optimized for smooth visual workflows.</p>
@@ -372,7 +477,7 @@
             </div>
 
             <div class="setup-card">
-                <img src="Setup2.jpg" alt="Secondary Workstation" onerror="this.src='https://via.placeholder.com/400x240/120b24/ffffff?text=Setup2.jpg'">
+                <img src="Setup2.jpg" alt="Secondary Workstation" onerror="this.src='https://via.placeholder.com/400x240/0f091d/ffffff?text=Setup2.jpg'">
                 <div class="setup-info">
                     <h3>Secondary Workstation</h3>
                     <p>Clean setup crafted for deep focus, creative brainstorming, and content production.</p>
